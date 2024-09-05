@@ -35,37 +35,27 @@ function App() {
   };
 
   return (
-    <section className="text-black space-y-24 flex flex-col items-center">
-      <div className="flex items-center">
-        {slots.slice(0, 4).map((slot) => (
-          <button
-            key={slot.id}
-            className={`relative parking-slot ${
-              slot.occupied ? "occupied" : "free"
-            } border-r-2 border-black park-space flex items-center justify-center first:border-l-2 `}
-            onClick={() => toggleSlot(slot.id)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                toggleSlot(slot.id);
-              }
-            }}
-            tabIndex={0}
-          >
-            {slot.id}
-            <span className="z-[4] absolute">
-              {slot.occupied && <CarSvg className="h-[5.5rem] w-[3rem] " />}
-            </span>
-          </button>
-        ))}
-      </div>
-      <div className="">
+    <section className="text-black grid place-content-center">
+      <div className="relative h-fit w-fit p-12 border-2 border-black gap-24 flex flex-col items-center">
+        {/* entry */}
+        <div className="absolute right-[-0.5rem] top-[9rem] flex items-center justify-center w-5 h-24 bg-white text-black font-bold text-lg">
+          <span className="rotate-90 transform tracking-widest text-sm ">
+            Entry
+          </span>
+        </div>
+        {/* exit  */}
+        <div className="absolute left-[-0.5rem] bottom-[9rem] flex items-center justify-center w-5 h-24 bg-white text-black font-bold text-lg">
+          <span className="-rotate-90 transform tracking-widest text-sm ">
+            Exit
+          </span>
+        </div>
         <div className="flex items-center">
-          {slots.slice(4, 8).map((slot) => (
+          {slots.slice(0, 4).map((slot) => (
             <button
               key={slot.id}
               className={`relative parking-slot ${
                 slot.occupied ? "occupied" : "free"
-              } border-r-2 border-black park-space flex items-center justify-center first:border-l-2 `}
+              } border-r-2 border-black park_space flex items-center justify-center first:border-l-2`}
               onClick={() => toggleSlot(slot.id)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -76,18 +66,64 @@ function App() {
             >
               {slot.id}
               <span className="z-[4] absolute">
-                {slot.occupied && <CarSvg className="h-[5.5rem] w-[3rem] " />}
+                {slot.occupied && <CarSvg className="car_size" />}
               </span>
             </button>
           ))}
         </div>
+        <div className="">
+          <div className="flex items-center">
+            {slots.slice(4, 8).map((slot) => (
+              <button
+                key={slot.id}
+                className={`relative parking-slot ${
+                  slot.occupied ? "occupied" : "free"
+                } border-r-2 border-black park_space flex items-center justify-center first:border-l-2`}
+                onClick={() => toggleSlot(slot.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    toggleSlot(slot.id);
+                  }
+                }}
+                tabIndex={0}
+              >
+                {slot.id}
+                <span className="z-[4] absolute">
+                  {slot.occupied && <CarSvg className="car_size" />}
+                </span>
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center">
+            {slots.slice(8, 12).map((slot) => (
+              <button
+                key={slot.id}
+                className={`relative parking-slot ${
+                  slot.occupied ? "occupied" : "free"
+                } border-r-2 border-black park_space flex items-center justify-center first:border-l-2 border-t-2 `}
+                onClick={() => toggleSlot(slot.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    toggleSlot(slot.id);
+                  }
+                }}
+                tabIndex={0}
+              >
+                {slot.id}
+                <span className="z-[4] absolute">
+                  {slot.occupied && <CarSvg className="car_size" />}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="flex items-center">
-          {slots.slice(8, 12).map((slot) => (
+          {slots.slice(12, 16).map((slot) => (
             <button
               key={slot.id}
               className={`relative parking-slot ${
                 slot.occupied ? "occupied" : "free"
-              } border-r-2 border-black park-space flex items-center justify-center first:border-l-2 border-t-2 `}
+              } border-r-2 border-black park_space flex items-center justify-center first:border-l-2 `}
               onClick={() => toggleSlot(slot.id)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -98,33 +134,11 @@ function App() {
             >
               {slot.id}
               <span className="z-[4] absolute">
-                {slot.occupied && <CarSvg className="h-[5.5rem] w-[3rem] " />}
+                {slot.occupied && <CarSvg className="car_size" />}
               </span>
             </button>
           ))}
         </div>
-      </div>
-      <div className="flex items-center">
-        {slots.slice(12, 16).map((slot) => (
-          <button
-            key={slot.id}
-            className={`relative parking-slot ${
-              slot.occupied ? "occupied" : "free"
-            } border-r-2 border-black park-space flex items-center justify-center first:border-l-2 `}
-            onClick={() => toggleSlot(slot.id)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                toggleSlot(slot.id);
-              }
-            }}
-            tabIndex={0}
-          >
-            {slot.id}
-            <span className="z-[4] absolute">
-              {slot.occupied && <CarSvg className="h-[5.5rem] w-[3rem] " />}
-            </span>
-          </button>
-        ))}
       </div>
     </section>
   );

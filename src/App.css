@@ -3,9 +3,15 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: white;
 }
 
-.park-space {
-  height: 8rem;
-  width: 4.5rem;
+.park_space {
+  height: 6rem;
+  width: 3.5rem;
+}
+
+.car_size {
+  height: 4rem;
+  width: 2.5rem;
 }
