@@ -46,8 +46,6 @@ function App() {
     { id: "D4", status: "free" },
   ]);
 
-  console.log(data, "DATA");
-
   useEffect(() => {
     if (data) {
       setSlots((prevSlots) =>
@@ -66,8 +64,6 @@ function App() {
       );
     }
   }, [data]);
-
-  console.log(slots, "s");
 
   return (
     <section className="text-black grid place-content-center">
