@@ -1,9 +1,18 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   background: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  #root {
+    display: block;
+  }
 }
 
 .park_space {
