@@ -89,8 +89,8 @@ function Entrance({ status }: { status: SlotStatus }) {
         "absolute right-[-0.5rem] transition-all duration-1000 top-[8rem] flex items-center justify-center w-5 h-20 bg-white text-black font-bold text-lg",
         {
           "bg-yellow-500": status === "obstruction",
-          "bg-green-500": status === "occupied",
-          "bg-red-500 text-white": status === "free",
+          "bg-green-500": status === "free",
+          "bg-red-500": status === "occupied",
         }
       )}
     >
@@ -118,8 +118,8 @@ function Exit({ status }: { status: SlotStatus }) {
         "absolute right-[-0.5rem] bottom-[8rem] transition-all duration-1000 flex items-center justify-center w-5 h-20 bg-white text-black font-bold text-lg",
         {
           "bg-yellow-500": status === "obstruction",
-          "bg-green-500": status === "occupied",
-          "bg-red-500 text-white": status === "free",
+          "bg-green-500": status === "free",
+          "bg-red-500": status === "occupied",
         }
       )}
     >
